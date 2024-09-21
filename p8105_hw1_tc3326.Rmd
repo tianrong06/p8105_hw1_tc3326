@@ -22,7 +22,23 @@ Write a short description of the penguins dataset
 summary(penguins)
 ```
 
-Important variables in this `penguins` dataset include **species**(Adelie, Chinstrap, and Gentoo), **island** names (Biscoe, Dream, Torgersen), **bill length** (ranging from `r min(penguins$bill_length_mm, na.rm = TRUE)` mm to `r max(penguins$bill_length_mm, na.rm = TRUE)` mm), **bill depth**, **flipper length** (mean: `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm), **body mass**, **sex**, and **year** of observation. These important variables' values can be found on the above table. The dataset includes `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+* Important variables in this `penguins` dataset include **species**(Adelie, Chinstrap, and Gentoo), **island** names (Biscoe, Dream, Torgersen), **bill length** (ranging from `r min(penguins$bill_length_mm, na.rm = TRUE)` mm to `r max(penguins$bill_length_mm, na.rm = TRUE)` mm), **bill depth**, **flipper length** (mean: `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm), **body mass**, **sex**, and **year** of observation. These important variables' values can be found on the above table. The dataset includes `r nrow(penguins)` rows and `r ncol(penguins)` columns.
+
+Make a scatterplot of flipper length vs bill length 
+
+```{r}
+library(ggplot2)
+
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  labs(title = "Flipper Length vs Bill Length", x = "Bill Length (mm)", y = "Flipper Length (mm)")
+```
+
+```{r}
+ggsave("scatterplot_flipper_vs_bill.jpg", width = 4, height = 6)
+```
+
+
 
 
 
