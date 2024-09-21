@@ -69,6 +69,22 @@ mean(factor_vec)
 * The mean **can** be calculated for **numeric**(random_sample) and **logical**(logical_vec) variables.
 * The mean **can not** be calculated for **character**(char_vec) and **factor**(factor_vec) variables. 
 
+Applies the as.numeric function to the logical, character and factor variables 
+
+```{r, echo = TRUE, results = 'hide'}
+numeric_logical = as.numeric(logical_vec)
+```
+
+```{r, echo = TRUE, results = 'hide'}
+numeric_char = as.numeric(char_vec)
+```
+
+```{r, echo = TRUE, results = 'hide'}
+numeric_factor = as.numeric(factor_vec)
+```
+* Logical variables and factor variables are converted to numeric vectors. Character variables can not be converted to numeric vectors. This is because logical variables are converted with True values are converted to 1 and False to 0. Factor variables are converted to their numeric codes corresponding to their levels. Character variables do not have numeric representation.
+
+* Yes, it explains why i can take the mean of logical and factor variables but not character variables. Logical variables can be converted to numeric (TRUE = 1, False = 0) which allow meaningful calculation of mean. Factor variables use numeric codes for the mean but it is always not meaningful. Character variable can not be converted to numeric, so the mean can not be calculated.
 
 
 
