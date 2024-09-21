@@ -52,6 +52,22 @@ problem2_df = tibble(
 problem2_df
 ```
 
+Take the mean of each variable in the dataframe
+```{r}
+random_sample = pull (problem2_df, var = random_sample)
+mean(random_sample)
+
+logical_vec = pull (problem2_df, var =logical_vec)
+mean(logical_vec)
+
+char_vec = pull (problem2_df, var =char_vec)
+mean(char_vec)
+
+factor_vec = pull (problem2_df, factor_vec)
+mean(factor_vec)
+```
+* The mean **can** be calculated for **numeric**(random_sample) and **logical**(logical_vec) variables.
+* The mean **can not** be calculated for **character**(char_vec) and **factor**(factor_vec) variables. 
 
 
 
